@@ -100,15 +100,6 @@
 
 ---
 
-<!-- 3D CONTRIBUTIONS -->
-## 🏙️ 3D Контрибуции
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/AleksandrSidorov01/AleksandrSidorov01/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%"/>
-</div>
-
----
-
 <!-- PROJECTS -->
 ## 💼 Мои проекты
 
