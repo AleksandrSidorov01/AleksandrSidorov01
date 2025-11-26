@@ -1,0 +1,53 @@
+# 🐍 Workflow для генерации анимированной змейки
+# Файл: .github/workflows/snake.yml
+#
+# Этот workflow автоматически генерирует анимацию змейки,
+# которая "ест" твои контрибуции на GitHub
+
+name: Generate Snake Animation
+
+on:
+  # Запуск каждые 12 часов
+  schedule:
+    - cron: "0 */12 * * *"
+  
+  # Возможность ручного запуска
+  workflow_dispatch:
+  
+  # Запуск при push в main ветку
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      # Клонируем репозиторий
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      # Генерируем SVG змейки
+      - name: Generate Snake Game
+        uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Публикуем в ветку output
+      - name: Push to Output Branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "🐍 Update snake animation"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
