@@ -1,6 +1,6 @@
-<!-- HEADER -->
+<!-- HEADER
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:833ab4,50:fd1d1d,100:fcb045&height=200&section=header&text=Привет!%20Я%20Александр%20👋&fontSize=40&fontColor=fff&animation=fadeIn&fontAlignY=35"/>
-
+-->
 <!-- TYPING SVG - ПОВТОРЯЮЩИЙСЯ -->
 <div align="center">
   <a href="https://git.io/typing-svg">
@@ -161,5 +161,6 @@
   <em>Открыт к сотрудничеству и новым знакомствам!</em>
   
 </div>
-
+<!--
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:833ab4,50:fd1d1d,100:fcb045&height=120&section=footer"/>
+-->
